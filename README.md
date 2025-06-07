@@ -239,7 +239,7 @@ MIT License - See LICENSE file for details.
 ## 👨‍💻 Authors
 
 **Development Team**
-- Email: support@analytics.dev
+- Email: duongphanhieunghia2003@gmail.com
 - Version: 1.0.0
 - Created: 2024
 
