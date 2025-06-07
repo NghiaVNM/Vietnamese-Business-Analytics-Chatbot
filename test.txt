@@ -1,0 +1,217 @@
+1. get_total_revenue
+Tính tổng doanh thu từ ngày 1/1/2023 đến 31/1/2023
+
+Tổng doanh thu tháng 3 năm 2020 là bao nhiêu?
+
+Doanh thu của quý 2 năm 2024 là bao nhiêu?
+
+Tổng doanh thu trong năm 2022?
+
+Cho tôi báo cáo doanh thu trong khoảng thời gian từ 15/2 đến 15/3/2023
+
+2. get_total_orders
+Đếm tổng số đơn hàng từ 1/1/2023 đến 31/1/2023
+
+Tổng số đơn hàng tháng 5 năm 2024 là bao nhiêu?
+
+Có bao nhiêu đơn hàng trong quý 3 năm 2023?
+
+Đếm đơn hàng từ 01/01 đến 31/12 năm 2022
+
+Số lượng đơn hàng trong tuần đầu tiên của tháng 4/2023 là bao nhiêu?
+ 
+3. get_avg_profit_by_month
+Lợi nhuận trung bình theo tháng trong năm 2023 là bao nhiêu?
+
+Tính lợi nhuận trung bình hàng tháng trong khoảng từ 1/1 đến 31/3/2023
+
+Cho tôi báo cáo lợi nhuận trung bình tháng 5 năm 2024
+
+Lợi nhuận trung bình mỗi tháng trong quý 1 năm 2022 là bao nhiêu?
+
+Lợi nhuận trung bình theo tháng của năm 2021 là bao nhiêu?
+
+4. compare_revenue
+So sánh doanh thu tháng 1 và tháng 2 năm 2023
+
+So sánh tổng doanh thu quý 1 và quý 2 năm 2024
+
+So sánh doanh thu giữa hai khoảng thời gian: 15/08/2021 - 01/06/2022 và 15/08/2023 - 01/06/2024
+
+Tôi muốn so sánh doanh thu tháng 6 và tháng 7 năm 2022
+
+So sánh doanh thu giữa nửa đầu và nửa cuối năm 2023
+
+5. get_weekly_trend
+Cho tôi xu hướng doanh thu theo tuần từ 1/1 đến 31/3/2023
+
+Xu hướng số đơn hàng theo tuần trong tháng 5 năm 2024
+
+Báo cáo xu hướng lợi nhuận theo tuần quý 2 năm 2023
+
+Xu hướng truy cập website theo tuần trong tháng 1/2023
+
+Theo dõi xu hướng doanh thu tuần của tháng 12 năm 2022
+
+6. get_quarterly_report
+Cho tôi báo cáo doanh thu theo quý năm 2023
+
+Báo cáo lợi nhuận quý 1 năm 2024 như thế nào?
+
+Tính doanh thu bán hàng quý 3 năm 2022
+
+Xu hướng doanh thu quý 4 năm 2023 ra sao?
+
+Báo cáo tổng hợp quý 2 năm 2021 cho tôi xem
+
+7. get_top_selling_product
+Sản phẩm bán chạy nhất trong tháng 3 năm 2023 là gì?
+
+Cho tôi danh sách sản phẩm bán chạy nhất quý 1 năm 2024
+
+Sản phẩm nào bán chạy nhất trong năm 2022?
+
+Top sản phẩm bán chạy trong tháng 5 năm 2023 là gì?
+
+Sản phẩm được bán nhiều nhất trong quý 3 năm 2023 là gì?
+
+8. get_top_order
+Đơn hàng có giá trị cao nhất trong tháng 2 năm 2023 là đơn hàng nào?
+
+Cho tôi biết đơn hàng lớn nhất quý 3 năm 2022
+
+Đơn hàng có giá trị cao nhất trong năm 2021 là gì?
+
+Top đơn hàng lớn nhất trong tháng 1 năm 2024?
+
+Đơn hàng giá trị cao nhất quý 2 năm 2023 là gì?
+
+9. compare_revenue_by_branch
+So sánh doanh thu các chi nhánh trong tháng 1 năm 2023
+
+So sánh doanh thu các chi nhánh trong quý 4 năm 2022 như thế nào?
+
+Báo cáo so sánh doanh thu giữa các chi nhánh quý 2 năm 2023
+
+So sánh doanh thu chi nhánh tháng 5 năm 2023
+
+Cho tôi bảng so sánh doanh thu theo chi nhánh trong năm 2023
+
+10. get_revenue_by_product
+Tính doanh thu của sản phẩm non trong tháng 3 năm 2023
+
+Doanh thu sản phẩm A trong quý 1 năm 2024 là bao nhiêu?
+
+Báo cáo doanh thu theo sản phẩm abc trong năm 2022
+
+Doanh thu sản phẩm Y trong tháng 5 năm 2023 như thế nào?
+
+Tính tổng doanh thu sản phẩm Z từ ngày 1/1 đến 31/3 năm 2023
+
+11. get_vip_orders
+Đếm số đơn hàng của khách VIP trong tháng 1 năm 2023
+
+Có bao nhiêu đơn hàng VIP trong quý 2 năm 2024?
+
+Tổng số đơn hàng khách VIP trong năm 2022 là bao nhiêu?
+
+Số đơn hàng VIP tháng 5 năm 2023 là bao nhiêu?
+
+Đơn hàng của khách VIP trong tuần 2 tháng 9 năm 2023 như thế nào?
+
+12. get_orders_above_value
+Lấy danh sách đơn hàng có giá trị lớn hơn 100 triệu đồng trong tháng 1 năm 2023
+
+Các đơn hàng trên 200 triệu trong quý 3 năm 2023?
+
+Danh sách đơn hàng trên 50 triệu đồng trong năm 2022 là gì?
+
+Lấy đơn hàng có giá trị lớn hơn 150 triệu đồng trong tháng 6 năm 2024
+
+Các đơn hàng trên 300 triệu đồng trong tháng 7 năm 2023
+
+13. get_order_detail
+Xem chi tiết đơn hàng ORD123456
+
+Chi tiết đơn hàng ORD789012 như thế nào?
+
+Cho tôi xem thông tin đơn hàng ORD456789
+
+Lịch sử chi tiết đơn hàng ORD112233
+
+14. get_customer_history
+Xem lịch sử mua hàng của khách hàng CUST123456
+
+Lịch sử mua hàng của khách CUST789012 như thế nào?
+
+Cho tôi biết lịch sử mua hàng của khách hàng CUST456789
+
+Khách hàng CUST987654 đã mua gì?
+
+Lịch sử đơn hàng của khách CUST135790
+
+15. get_products_in_order
+Liệt kê sản phẩm trong đơn hàng ORD123456
+
+Đơn hàng ORD654321 gồm những sản phẩm gì?
+
+Danh sách sản phẩm trong đơn hàng ORD789012
+
+Các sản phẩm trong đơn hàng ORD345678 là gì?
+
+Sản phẩm đã đặt trong đơn hàng ORD112233
+
+16. get_order_completion_rate
+Tính tỷ lệ hoàn thành đơn hàng từ ngày 1/1/2023 đến 31/1/2023
+
+Báo cáo tỷ lệ hoàn thành đơn hàng quý 2 năm 2023
+
+Tỷ lệ hoàn thành đơn hàng trong tháng 5 năm 2024 là bao nhiêu?
+
+Cho biết tỷ lệ hoàn thành đơn hàng trong năm 2022
+
+Tỷ lệ hoàn thành đơn hàng trong tuần đầu tháng 3 năm 2023
+
+17. get_roi
+Tính ROI của chiến dịch summer sale
+
+Báo cáo ROI cho chiến dịch social media ads năm 2023
+
+ROI chiến dịch loyalty program diễn ra trong quý 1 năm 2024 là bao nhiêu?
+
+Tính ROI chiến dịch black friday 2023 tháng 6 năm 2023
+
+Cho tôi báo cáo ROI của chiến dịch quảng cáo mùa lễ hội năm 2022
+
+18. get_traffic_stats
+Truy vấn lượt truy cập website từ ngày 1/1/2023 đến 31/1/2023
+
+Báo cáo thống kê truy cập website quý 2 năm 2023
+
+Lượt truy cập trang web tháng 5 năm 2024 là bao nhiêu?
+
+Thống kê lượt truy cập website trong năm 2022
+
+Lượt truy cập website tuần thứ 2 trong tháng 3 năm 2023
+
+19. get_new_customer_count
+Đếm số lượng khách hàng mới trong tháng 3 năm 2023
+
+Số khách hàng mới quý 1 năm 2024 là bao nhiêu?
+
+Báo cáo khách hàng mới trong năm 2022
+
+Đếm khách hàng mới trong tháng 5 năm 2023
+
+Số lượng khách hàng mới trong tuần đầu tháng 4 năm 2023
+
+20. get_customer_segment_report
+Lấy báo cáo doanh thu theo phân khúc khách hàng VIP trong tháng 1 năm 2023
+
+Báo cáo phân khúc khách hàng vãng lai theo doanh thu quý 2 năm 2023
+
+Doanh thu phân khúc khách hàng trung thành trong năm 2022 là bao nhiêu?
+
+Lấy báo cáo phân khúc khách hàng thường trong tháng 5 năm 2024
+
+Báo cáo doanh thu phân khúc doanh nghiệp trong năm 2023

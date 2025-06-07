@@ -1,0 +1,392 @@
+[
+  {
+    "name": "get_total_revenue",
+    "description": "Tính tổng doanh thu trong một khoảng thời gian",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "description": "Ngày bắt đầu (YYYY-MM-DD)"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "Ngày kết thúc (YYYY-MM-DD)"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_total_orders",
+    "description": "Đếm tổng số đơn hàng trong một khoảng thời gian",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_avg_profit_by_month",
+    "description": "Tính lợi nhuận trung bình theo tháng trong khoảng thời gian",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "compare_revenue",
+    "description": "So sánh doanh thu giữa hai khoảng thời gian",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "period1_start": {
+          "type": "string"
+        },
+        "period1_end": {
+          "type": "string"
+        },
+        "period2_start": {
+          "type": "string"
+        },
+        "period2_end": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "period1_start",
+        "period1_end",
+        "period2_start",
+        "period2_end"
+      ]
+    }
+  },
+  {
+    "name": "get_weekly_trend",
+    "description": "Truy vấn xu hướng theo tuần cho một chỉ số",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric",
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_quarterly_report",
+    "description": "Truy vấn báo cáo theo quý trong một năm",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "metric",
+        "year"
+      ]
+    }
+  },
+  {
+    "name": "get_top_selling_product",
+    "description": "Truy vấn sản phẩm bán chạy nhất trong khoảng thời gian",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_top_order",
+    "description": "Truy vấn đơn hàng có giá trị cao nhất",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "compare_revenue_by_branch",
+    "description": "So sánh doanh thu giữa các chi nhánh",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_revenue_by_product",
+    "description": "Tính doanh thu theo sản phẩm trong khoảng thời gian",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "product_name": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "product_name",
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_vip_orders",
+    "description": "Đếm số đơn hàng của khách VIP",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_orders_above_value",
+    "description": "Lấy danh sách đơn hàng có giá trị lớn hơn ngưỡng cho trước",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "min_value": {
+          "type": "number"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "min_value",
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_order_detail",
+    "description": "Xem chi tiết một đơn hàng theo mã",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id"
+      ]
+    }
+  },
+  {
+    "name": "get_customer_history",
+    "description": "Xem lịch sử mua hàng của một khách hàng",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "customer_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer_id"
+      ]
+    }
+  },
+  {
+    "name": "get_products_in_order",
+    "description": "Liệt kê sản phẩm trong đơn hàng",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id"
+      ]
+    }
+  },
+  {
+    "name": "get_order_completion_rate",
+    "description": "Tính tỉ lệ hoàn thành đơn hàng",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_roi",
+    "description": "Tính ROI của chiến dịch marketing",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "campaign_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "campaign_id"
+      ]
+    }
+  },
+  {
+    "name": "get_traffic_stats",
+    "description": "Truy vấn lượt truy cập website theo thời gian",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_new_customer_count",
+    "description": "Đếm số lượng khách hàng mới",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "get_customer_segment_report",
+    "description": "Truy vấn báo cáo theo phân khúc khách hàng",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "segment": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "segment",
+        "start_date",
+        "end_date"
+      ]
+    }
+  }
+]
