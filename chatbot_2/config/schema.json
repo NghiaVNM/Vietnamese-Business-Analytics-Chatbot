@@ -1,0 +1,172 @@
+[
+  {
+    "name": "add",
+    "description": "Create and insert new data records into the system database",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "departments": {
+          "type": "string",
+          "enum": ["accountant", "finance"],
+          "description": "Target department responsible for the operation"
+        },
+        "content": {
+          "type": "string",
+          "enum": ["report", "employee"],
+          "description": "Type of content/entity to be created in the system"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$",
+          "description": "Unique identifier for the new record being created"
+        },
+        "type_of_time": {
+            "type": "string",
+            "enum": ["day", "month", "year", "range"],
+            "description": "Time scope classification for the new record"
+        },
+        "specific_time": {
+          "type": "string",
+          "description": "Extract timestamp or date range (YYYY-MM-DD or YYYY-MM-DD to YYYY-MM-DD)"
+        }
+      },
+      "required": ["departments", "content", "id", "type_of_time", "specific_time"]
+    }
+  },
+  {
+    "name": "get",
+    "description": "Retrieve and fetch existing data records from the system database",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "departments": {
+          "type": "string",
+          "enum": ["accountant", "finance"],
+          "description": "Source department where data will be retrieved from"
+        },
+        "content": {
+          "type": "string",
+          "enum": ["report", "employee"],
+          "description": "Type of content/entity to be retrieved from the system"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$",
+          "description": "Unique identifier for the content being retrieved"
+        },
+        "type_of_time": {
+            "type": "string",
+            "enum": ["day", "month", "year", "range"],
+            "description": "Time scope filter for data retrieval"
+        },
+        "specific_time": {
+          "type": "string",
+          "description": "Extract timestamp or date range filter (YYYY-MM-DD or YYYY-MM-DD to YYYY-MM-DD)"
+        }
+      },
+      "required": ["departments", "content", "id", "type_of_time", "specific_time"]
+    }
+  },
+  {
+    "name": "delete",
+    "description": "Remove and permanently delete existing data records from the system",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "departments": {
+          "type": "string",
+          "enum": ["accountant", "finance"],
+          "description": "Department authority responsible for the deletion operation"
+        },
+        "content": {
+          "type": "string",
+          "enum": ["report", "employee"],
+          "description": "Type of content/entity to be permanently removed from system"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$",
+          "description": "Unique identifier for the content being deleted"
+        },
+        "type_of_time": {
+            "type": "string",
+            "enum": ["day", "month", "year", "range"],
+            "description": "Time scope context for the deletion operation"
+        },
+        "specific_time": {
+          "type": "string",
+          "description": "Extract timestamp or date range context (YYYY-MM-DD or YYYY-MM-DD to YYYY-MM-DD)"
+        }
+      },
+      "required": ["departments", "content", "id", "type_of_time", "specific_time"]
+    }
+  },
+  {
+    "name": "compare",
+    "description": "Analyze and contrast differences between multiple records or time periods",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "departments": {
+          "type": "string",
+          "enum": ["accountant", "finance"],
+          "description": "Department context for the comparison analysis"
+        },
+        "content": {
+          "type": "string",
+          "enum": ["report", "employee"],
+          "description": "Type of content/entity to be compared and analyzed"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$",
+          "description": "Unique identifier for the primary record for comparison"
+        },
+        "type_of_time": {
+            "type": "string",
+            "enum": ["day", "month", "year", "range"],
+            "description": "Time scope framework for the comparison analysis"
+        },
+        "specific_time": {
+          "type": "string",
+          "description": "Extract timestamp or date range for comparison (YYYY-MM-DD or YYYY-MM-DD to YYYY-MM-DD)"
+        }
+      },
+      "required": ["departments", "content", "type_of_time", "specific_time"]
+    }
+  },
+  {
+    "name": "predict",
+    "description": "Forcast and estimate future trends based on historical data patterns",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "departments": {
+          "type": "string",
+          "enum": ["accountant", "finance"],
+          "description": "Department context for the prediction analysis"
+        },
+        "content": {
+          "type": "string",
+          "enum": ["report", "employee"],
+          "description": "Type of content/entity to generate predictions for"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$",
+          "description": "Unique identifier of the base record for prediction modeling"
+        },
+        "type_of_time": {
+            "type": "string",
+            "enum": ["day", "month", "year", "range"],
+            "description": "Time horizon scope for the prediction forecast"
+        },
+        "specific_time": {
+          "type": "string",
+          "description": "Target timestamp or date range for prediction (YYYY-MM-DD or YYYY-MM-DD to YYYY-MM-DD)"
+        }
+      },
+      "required": ["departments", "content", "type_of_time", "specific_time"]
+    }
+  }
+]
