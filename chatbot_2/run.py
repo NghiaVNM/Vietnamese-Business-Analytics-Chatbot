@@ -23,7 +23,7 @@ def main():
   # Interact loop
   while True:
     try:
-      user_input = input("\n BanjL ").strip()
+      user_input = input("\n Bạn: ").strip()
 
       if user_input.lower() in ['quit', 'exit', 'bye']:
         print("Tạm biệt!")
@@ -33,15 +33,24 @@ def main():
         continue
 
       # Process query
-      print("Processing...")
       result = bot.process_vietnamese_query(user_input)
 
       if result['success']:
-        print(f"Bot: {result['result']}")
+        function_call = result['function_call']
+        function_name = function_call['name']
+        params = function_call['parameters']
+
+        param_str = ', '.join([f"{k}={v}" for k, v in params.items()])
+        display_msg = f"{function_name}({param_str})"
+
+        print(f"Bot: {display_msg}")
+
         if config.DEBUG:
-          print(f"Function Calls: {result['function_call']}")
-        else:
-          print(f"Error: {result['error']}")
+          print(f"Vietnamese Query: {result['vietnamese_query']}")
+          print(f"English Query: {result['english_query']}")
+          print(f"Function Call: {json.dumps(result['function_call'], indent=2)}")
+      else:
+        print(f"Error: {result['error']}")
 
     except KeyboardInterrupt:
       print("\nTạm biệt!")

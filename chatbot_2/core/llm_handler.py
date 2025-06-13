@@ -1,4 +1,3 @@
-import json
 import requests
 import re
 from typing import Dict, Any, List, Optional
@@ -21,7 +20,6 @@ class LLMHandler:
       "options": {
         "temperature": config.LLM_TEMPERATURE,
         "max_tokens": config.LLM_MAX_TOKENS,
-        "stop": ["\n", "User:", "Input:"]
       }
     }
 
@@ -33,6 +31,7 @@ class LLMHandler:
   def parse_function_call(self, llm_response: str) -> Dict[str, Any]:
     """Parse function call from LLM response"""
 
+    print(f"LLM Response: {llm_response}")
     response = llm_response.strip()
 
     # Extract function name and parameters

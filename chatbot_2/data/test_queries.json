@@ -1,0 +1,289 @@
+{
+  "test_cases": {
+    "add_function": [
+      {
+        "id": "add_001",
+        "description": "Add specific report for accounting department today",
+        "vietnamese_query": "Thêm báo cáo mới abc123 cho phòng kế toán hôm nay",
+        "english_translation": "Add new report abc123 for accounting department today",
+        "expected_function_call": {
+          "name": "add",
+          "parameters": {
+            "departments": "accountant",
+            "content": "report",
+            "id": "abc123",
+            "type_of_time": "day",
+            "specific_time": "2025-06-11"
+          }
+        }
+      },
+      {
+        "id": "add_002",
+        "description": "Add monthly financial report",
+        "vietnamese_query": "Thêm báo cáo tài chính tháng này",
+        "english_translation": "Add financial report this month",
+        "expected_function_call": {
+          "name": "add",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "id": "report_001",
+            "type_of_time": "month",
+            "specific_time": "2025-06-01"
+          }
+        }
+      },
+      {
+        "id": "add_003",
+        "description": "Create new employee profile",
+        "vietnamese_query": "Tạo hồ sơ nhân viên mới cho phòng kế toán",
+        "english_translation": "Create new employee profile for accounting department",
+        "expected_function_call": {
+          "name": "add",
+          "parameters": {
+            "departments": "accountant",
+            "content": "employee",
+            "id": "employee_001",
+            "type_of_time": "day",
+            "specific_time": "2025-06-11"
+          }
+        }
+      }
+    ],
+    "get_function": [
+      {
+        "id": "get_001",
+        "description": "Get today's report",
+        "vietnamese_query": "Xem báo cáo hôm nay",
+        "english_translation": "View report today",
+        "expected_function_call": {
+          "name": "get",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "id": "report_002",
+            "type_of_time": "day",
+            "specific_time": "2025-06-11"
+          }
+        }
+      },
+      {
+        "id": "get_002",
+        "description": "Get employee data from month start to now",
+        "vietnamese_query": "Lấy dữ liệu nhân viên từ đầu tháng đến nay",
+        "english_translation": "Get employee data from beginning of month to now",
+        "expected_function_call": {
+          "name": "get",
+          "parameters": {
+            "departments": "finance",
+            "content": "employee",
+            "id": "employee_002",
+            "type_of_time": "range",
+            "specific_time": "2025-06-01 to 2025-06-11"
+          }
+        }
+      },
+      {
+        "id": "get_003",
+        "description": "Get specific financial report",
+        "vietnamese_query": "Xem báo cáo xyz789 của phòng tài chính",
+        "english_translation": "View report xyz789 from finance department",
+        "expected_function_call": {
+          "name": "get",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "id": "xyz789",
+            "type_of_time": "day",
+            "specific_time": "2025-06-11"
+          }
+        }
+      },
+      {
+        "id": "get_004",
+        "description": "Get weekly employee report",
+        "vietnamese_query": "Lấy báo cáo nhân viên tuần này",
+        "english_translation": "Get employee report this week",
+        "expected_function_call": {
+          "name": "get",
+          "parameters": {
+            "departments": "finance",
+            "content": "employee",
+            "id": "employee_003",
+            "type_of_time": "week",
+            "specific_time": "2025-06-09"
+          }
+        }
+      }
+    ],
+    "delete_function": [
+      {
+        "id": "delete_001",
+        "description": "Delete specific employee from system",
+        "vietnamese_query": "Xóa nhân viên emp789 khỏi hệ thống",
+        "english_translation": "Delete employee emp789 from system",
+        "expected_function_call": {
+          "name": "delete",
+          "parameters": {
+            "departments": "finance",
+            "content": "employee",
+            "id": "emp789",
+            "type_of_time": "day",
+            "specific_time": "2025-06-11"
+          }
+        }
+      },
+      {
+        "id": "delete_002",
+        "description": "Delete report from last week",
+        "vietnamese_query": "Xóa báo cáo RPT123 của tuần trước",
+        "english_translation": "Delete report RPT123 from last week",
+        "expected_function_call": {
+          "name": "delete",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "id": "RPT123",
+            "type_of_time": "week",
+            "specific_time": "2025-06-02"
+          }
+        }
+      },
+      {
+        "id": "delete_003",
+        "description": "Remove employee record from accounting",
+        "vietnamese_query": "Xóa hồ sơ nhân viên EMP456 khỏi phòng kế toán",
+        "english_translation": "Remove employee record EMP456 from accounting department",
+        "expected_function_call": {
+          "name": "delete",
+          "parameters": {
+            "departments": "accountant",
+            "content": "employee",
+            "id": "EMP456",
+            "type_of_time": "day",
+            "specific_time": "2025-06-11"
+          }
+        }
+      }
+    ],
+    "compare_function": [
+      {
+        "id": "compare_001",
+        "description": "Compare this month's report with last month",
+        "vietnamese_query": "So sánh báo cáo tháng này với tháng trước",
+        "english_translation": "Compare this month's report with last month",
+        "expected_function_call": {
+          "name": "compare",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "type_of_time": "month",
+            "specific_time": "2025-06-01"
+          }
+        }
+      },
+      {
+        "id": "compare_002",
+        "description": "Analyze employee performance this quarter",
+        "vietnamese_query": "Phân tích hiệu suất nhân viên quý này",
+        "english_translation": "Analyze employee performance this quarter",
+        "expected_function_call": {
+          "name": "compare",
+          "parameters": {
+            "departments": "accountant",
+            "content": "employee",
+            "type_of_time": "range",
+            "specific_time": "2025-04-01 to 2025-06-30"
+          }
+        }
+      },
+      {
+        "id": "compare_003",
+        "description": "Compare this year's revenue with last year",
+        "vietnamese_query": "So sánh doanh thu năm nay với năm trước",
+        "english_translation": "Compare this year's revenue with last year",
+        "expected_function_call": {
+          "name": "compare",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "type_of_time": "year",
+            "specific_time": "2025-01-01"
+          }
+        }
+      }
+    ],
+    "predict_function": [
+      {
+        "id": "predict_001",
+        "description": "Predict specific report trend next week",
+        "vietnamese_query": "Dự đoán xu hướng báo cáo def456 tuần tới",
+        "english_translation": "Predict report def456 trend next week",
+        "expected_function_call": {
+          "name": "predict",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "id": "def456",
+            "type_of_time": "week",
+            "specific_time": "2025-06-16"
+          }
+        }
+      },
+      {
+        "id": "predict_002",
+        "description": "Forecast next quarter's profit",
+        "vietnamese_query": "Dự đoán lợi nhuận quý tới",
+        "english_translation": "Predict next quarter's profit",
+        "expected_function_call": {
+          "name": "predict",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "type_of_time": "range",
+            "specific_time": "2025-07-01 to 2025-09-30"
+          }
+        }
+      },
+      {
+        "id": "predict_003",
+        "description": "Forecast staffing needs next year",
+        "vietnamese_query": "Dự báo nhu cầu nhân sự năm sau",
+        "english_translation": "Forecast staffing needs next year",
+        "expected_function_call": {
+          "name": "predict",
+          "parameters": {
+            "departments": "accountant",
+            "content": "employee",
+            "type_of_time": "year",
+            "specific_time": "2026-01-01"
+          }
+        }
+      },
+      {
+        "id": "predict_004",
+        "description": "Predict financial trends for next month",
+        "vietnamese_query": "Dự đoán xu hướng tài chính tháng sau",
+        "english_translation": "Predict financial trends next month",
+        "expected_function_call": {
+          "name": "predict",
+          "parameters": {
+            "departments": "finance",
+            "content": "report",
+            "type_of_time": "month",
+            "specific_time": "2025-07-01"
+          }
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_test_cases": 18,
+    "functions_covered": ["add", "get", "delete", "compare", "predict"],
+    "departments_covered": ["finance", "accountant"],
+    "content_types_covered": ["report", "employee"],
+    "time_types_covered": ["day", "week", "month", "year", "range"],
+    "created_date": "2025-06-11",
+    "version": "1.0"
+  }
+}

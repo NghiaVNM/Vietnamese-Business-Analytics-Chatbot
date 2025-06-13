@@ -3,11 +3,10 @@ import logging
 from pathlib import Path
 from typing import Dict, Any
 
-from .translator import Translator
-from .llm_handler import LLMHandler
-from .function_executor import FunctionExecutor
-from ..config.settings import config
-from ..utils.validators import SchemaValidator
+from core.translator import Translator
+from core.llm_handler import LLMHandler
+from config.settings import config
+from utils.validators import SchemaValidator
 
 class BusinessAnalystChatbot:
   def __init__(self):
@@ -20,7 +19,6 @@ class BusinessAnalystChatbot:
     # Initialize components
     self.translator = Translator()
     self.llm_handler = LLMHandler()
-    self.function_executor = FunctionExecutor()
     self.validator = SchemaValidator(self.schema)
 
     self.logger.info("BusinessAnalystChatbot initialized")
@@ -56,18 +54,11 @@ class BusinessAnalystChatbot:
       # Step 3: Validate function call
       self.validator.validate_function_call(function_call)
 
-      # Step 4: Execute function
-      result = self.function_executor.execute(
-        function_call['name'],
-        function_call['parameters']
-      )
-
       return {
         'success': True,
         'vietnamese_query': vietnamese_input,
         'english_query': english_query,
         'function_call': function_call,
-        'result': result
       }
     
     except Exception as e:
@@ -78,5 +69,4 @@ class BusinessAnalystChatbot:
         'vietnamese_query': vietnamese_input,
         'english_query': None,
         'function_call': None,
-        'result': None
       }

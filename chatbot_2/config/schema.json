@@ -17,12 +17,12 @@
         },
         "id": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9]+$",
+          "pattern": "^[a-zA-Z0-9_]+$",
           "description": "Unique identifier for the new record being created"
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "month", "year", "range"],
+            "enum": ["day", "week","month", "year", "range"],
             "description": "Time scope classification for the new record"
         },
         "specific_time": {
@@ -51,12 +51,12 @@
         },
         "id": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9]+$",
+          "pattern": "^[a-zA-Z0-9_]+$",
           "description": "Unique identifier for the content being retrieved"
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "month", "year", "range"],
+            "enum": ["day", "week","month", "year", "range"],
             "description": "Time scope filter for data retrieval"
         },
         "specific_time": {
@@ -85,12 +85,12 @@
         },
         "id": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9]+$",
+          "pattern": "^[a-zA-Z0-9_]+$",
           "description": "Unique identifier for the content being deleted"
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "month", "year", "range"],
+            "enum": ["day", "week","month", "year", "range"],
             "description": "Time scope context for the deletion operation"
         },
         "specific_time": {
@@ -119,12 +119,12 @@
         },
         "id": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9]+$",
+          "pattern": "^[a-zA-Z0-9_]+$",
           "description": "Unique identifier for the primary record for comparison"
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "month", "year", "range"],
+            "enum": ["day", "week","month", "year", "range"],
             "description": "Time scope framework for the comparison analysis"
         },
         "specific_time": {
@@ -153,12 +153,12 @@
         },
         "id": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9]+$",
+          "pattern": "^[a-zA-Z0-9_]+$",
           "description": "Unique identifier of the base record for prediction modeling"
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "month", "year", "range"],
+            "enum": ["day", "week","month", "year", "range"],
             "description": "Time horizon scope for the prediction forecast"
         },
         "specific_time": {
