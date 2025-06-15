@@ -7,12 +7,12 @@
       "properties": {
         "departments": {
           "type": "string",
-          "enum": ["accountant", "finance"],
+          "enum": ["accountant", "finance", "manager", "employee", "hr"],
           "description": "Target department responsible for the operation"
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
           "description": "Type of content/entity to be created in the system"
         },
         "id": {
@@ -41,12 +41,12 @@
       "properties": {
         "departments": {
           "type": "string",
-          "enum": ["accountant", "finance"],
+          "enum": ["accountant", "finance", "manager", "employee", "hr"],
           "description": "Source department where data will be retrieved from"
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
           "description": "Type of content/entity to be retrieved from the system"
         },
         "id": {
@@ -75,12 +75,12 @@
       "properties": {
         "departments": {
           "type": "string",
-          "enum": ["accountant", "finance"],
+          "enum": ["accountant", "finance", "manager", "employee", "hr"],
           "description": "Department authority responsible for the deletion operation"
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
           "description": "Type of content/entity to be permanently removed from system"
         },
         "id": {
@@ -109,12 +109,12 @@
       "properties": {
         "departments": {
           "type": "string",
-          "enum": ["accountant", "finance"],
+          "enum": ["accountant", "finance", "manager", "employee", "hr"],
           "description": "Department context for the comparison analysis"
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
           "description": "Type of content/entity to be compared and analyzed"
         },
         "id": {
@@ -143,12 +143,12 @@
       "properties": {
         "departments": {
           "type": "string",
-          "enum": ["accountant", "finance"],
+          "enum": ["accountant", "finance", "manager", "employee", "hr"],
           "description": "Department context for the prediction analysis"
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
           "description": "Type of content/entity to generate predictions for"
         },
         "id": {
