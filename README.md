@@ -24,7 +24,7 @@ A smart Vietnamese chatbot that converts natural language queries into structure
 ## Installation
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.12+
 - Ollama installed on your system
 
 ### Step 1: Install Ollama
