@@ -1,37 +1,37 @@
-import requests
 import re
 from typing import Dict, Any, List, Optional
 from config.settings import config
 from prompts.templates import create_function_calling_prompt
+from core.llm_providers import LLMProviderFactory
 
 class LLMHandler:
-  def __init__(self, base_url: 'Optional[str]' = None):
-    self.base_url = base_url or config.LLM_BASE_URL
+  def __init__(self, provider_type: Optional[str] = None):
+    resolved_provider_type = provider_type or config.LLM_PROVIDER
+    self.provider = LLMProviderFactory.create_provider(resolved_provider_type)
+    self.provider_type = resolved_provider_type
+
+  def switch_provider(self, provider_type: str):
+    """Switch between LLM providers"""
+    self.provider = LLMProviderFactory.create_provider(provider_type)
+    self.provider_type = provider_type
+    print(f"Switched to {provider_type} provider")
 
   def generate_function_call(self, english_query: str, schema: List[Dict]) -> Dict[str, Any]:
     """Generate function call from English query"""
-
     prompt = create_function_calling_prompt(english_query, schema)
-
-    payload = {
-      "model": config.LLM_MODEL,
-      "prompt": prompt,
-      "stream": False,
-      "options": {
-        "temperature": config.LLM_TEMPERATURE,
-        "max_tokens": config.LLM_MAX_TOKENS,
-      }
-    }
-
-    response = requests.post(f"{self.base_url}/api/generate", json=payload)
-    result = response.json()
-
-    return self.parse_function_call(result['response'])
+    
+    # Generate response using the current provider
+    response = self.provider.generate_response(
+      prompt,
+      temperature=config.LLM_TEMPERATURE,
+      max_tokens=config.LLM_MAX_TOKENS
+    )
+    
+    return self.parse_function_call(response)
   
   def parse_function_call(self, llm_response: str) -> Dict[str, Any]:
     """Parse function call from LLM response"""
-
-    print(f"LLM Response: {llm_response}")
+    print(f"LLM Response ({self.provider_type}): {llm_response}")
     response = llm_response.strip()
 
     # Extract function name and parameters

@@ -1,14 +1,29 @@
-import requests
 from typing import Optional
 from config.settings import config
+from core.llm_providers import LLMProviderFactory
 
 class Translator:
-  def __init__(self, base_url: 'Optional[str]' = None):
-    self.base_url = base_url or config.LLM_BASE_URL
+  def __init__(self, provider_type: Optional[str] = None):
+    resolved_provider_type = provider_type or config.LLM_PROVIDER
+    self.provider = LLMProviderFactory.create_provider(resolved_provider_type)
+    self.provider_type = resolved_provider_type
+
+  def switch_provider(self, provider_type: str):
+    """Switch between LLM providers"""
+    self.provider = LLMProviderFactory.create_provider(provider_type)
+    self.provider_type = provider_type
 
   def vietnamese_to_english(self, vietnamese_text: str) -> str:
     """Translate Vietnamese to English for better LLM processing"""
-    prompt = f"""<|im_start|>system
+    if self.provider_type == "openai":
+      prompt = f"""You are a translation API. Your only job is to translate Vietnamese to English. 
+Return ONLY the English translation, no greetings, no explanations.
+
+Vietnamese: "{vietnamese_text}"
+English:"""
+    else:
+      # Ollama format
+      prompt = f"""<|im_start|>system
 You are a translation API. Your only job is to translate Vietnamese to English. 
 Return ONLY the English translation, no greetings, no explanations.
 <|im_end|>
@@ -18,20 +33,14 @@ Return ONLY the English translation, no greetings, no explanations.
 <|im_start|>assistant
 """
 
-    payload = {
-      "model": config.LLM_MODEL,
-      "prompt": prompt,
-      "stream": False,
-      "options": {
-        "temperature": 0.1,
-        "max_tokens": 50,
-        "stop": ["<|im_start|>", "<|im_end|>"]
-      }
-    }
-
     try:
-      response = requests.post(f"{self.base_url}/api/generate", json = payload)
-      result = response.json()
-      return result['response'].strip()
+      response = self.provider.generate_response(
+        prompt,
+        temperature=0.1,
+        max_tokens=50,
+        stop=["<|im_start|>", "<|im_end|>"] if self.provider_type != "openai" else None
+      )
+      return response
     except Exception as e:
+      print(f"Translation error: {e}")
       return vietnamese_text

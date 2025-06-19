@@ -15,19 +15,36 @@ def main():
   # Initialize chatbot
   try:
     bot = BusinessAnalystChatbot()
-    print("Chatbot initialized successfully!")
+    print(f"Chatbot initialized successfully with {bot.current_provider} provider!")
+    print("Commands:")
+    print("- 'switch ollama' - Switch to Ollama provider")
+    print("- 'switch openai' - Switch to OpenAI provider")
+    print("- 'quit', 'exit', 'bye' - Exit the program")
+    print("-" * 50)
   except Exception as e:
     print(f"Failed to initialize chatbot: {e}")
     return
   
-  # Interact loop
+  # Interaction loop
   while True:
     try:
-      user_input = input("\n Bạn: ").strip()
+      user_input = input(f"\n[{bot.current_provider}] Bạn: ").strip()
 
       if user_input.lower() in ['quit', 'exit', 'bye']:
         print("Tạm biệt!")
         break
+
+      # Handle provider switching
+      if user_input.lower().startswith('switch '):
+        provider = user_input.lower().replace('switch ', '')
+        if provider in ['ollama', 'openai']:
+          if bot.switch_provider(provider):
+            print(f"✓ Switched to {provider} provider")
+          else:
+            print(f"✗ Failed to switch to {provider} provider")
+        else:
+          print("Available providers: ollama, openai")
+        continue
 
       if not user_input:
         continue
@@ -43,7 +60,7 @@ def main():
         param_str = ', '.join([f"{k}={v}" for k, v in params.items()])
         display_msg = f"{function_name}({param_str})"
 
-        print(f"Bot: {display_msg}")
+        print(f"Bot [{result['provider']}]: {display_msg}")
 
         if config.DEBUG:
           print(f"Vietnamese Query: {result['vietnamese_query']}")
