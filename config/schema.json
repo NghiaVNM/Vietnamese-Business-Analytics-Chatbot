@@ -12,7 +12,7 @@
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice", "cash_flow"],
           "description": "Type of content/entity to be created in the system"
         },
         "id": {
@@ -22,7 +22,7 @@
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "week","month", "year", "range"],
+            "enum": ["day", "week","month", "quarter", "year", "range"],
             "description": "Time scope classification for the new record"
         },
         "specific_time": {
@@ -46,7 +46,7 @@
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice", "cash_flow"],
           "description": "Type of content/entity to be retrieved from the system"
         },
         "id": {
@@ -56,7 +56,7 @@
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "week","month", "year", "range"],
+            "enum": ["day", "week","month", "quarter", "year", "range"],
             "description": "Time scope filter for data retrieval"
         },
         "specific_time": {
@@ -80,7 +80,7 @@
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice", "cash_flow"],
           "description": "Type of content/entity to be permanently removed from system"
         },
         "id": {
@@ -90,7 +90,7 @@
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "week","month", "year", "range"],
+            "enum": ["day", "week","month", "quarter", "year", "range"],
             "description": "Time scope context for the deletion operation"
         },
         "specific_time": {
@@ -114,7 +114,7 @@
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice", "cash_flow"],
           "description": "Type of content/entity to be compared and analyzed"
         },
         "id": {
@@ -124,7 +124,7 @@
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "week","month", "year", "range"],
+            "enum": ["day", "week","month", "quarter", "year", "range"],
             "description": "Time scope framework for the comparison analysis"
         },
         "specific_time": {
@@ -148,7 +148,7 @@
         },
         "content": {
           "type": "string",
-          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice"],
+          "enum": ["report", "employee", "task", "performance", "project", "leave_request", "invoice", "cash_flow"],
           "description": "Type of content/entity to generate predictions for"
         },
         "id": {
@@ -158,7 +158,7 @@
         },
         "type_of_time": {
             "type": "string",
-            "enum": ["day", "week","month", "year", "range"],
+            "enum": ["day", "week","month", "quarter", "year", "range"],
             "description": "Time horizon scope for the prediction forecast"
         },
         "specific_time": {

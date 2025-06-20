@@ -2,8 +2,15 @@ from typing import List, Dict
 from config.settings import config
 from utils.date_utils import VietnamDateUtils
 
-SYSTEM_PROMPT = """
-You are a business analytics function calling assistant. Convert natural language queries into precise function calls.
+# SYSTEM_PROMPT = """
+# You are a business analytics function calling assistant. Convert natural language queries into precise function calls.
+
+SYSTEM_PROMPT = """You are a business analytics function calling API. Your ONLY job is to convert queries into function calls.
+
+RULES:
+- Return ONLY the function call syntax
+- NO explanations, examples, or additional text
+- Format: function_name(param1='value1', param2='value2')
 
 AVAILABLE FUNCTIONS:
 1. add() - Create new records in database
@@ -33,6 +40,22 @@ TIME MAPPING EXAMPLES:
 - "yesterday" → type_of_time='day', specific_time='2025-06-10'
 - "from June 1 to 15" → type_of_time='range', specific_time='2025-06-01 to 2025-06-15'
 
+DEPARTMENTS: accountant, finance, manager, employee, hr
+CONTENT: report, employee, task, performance, project, leave_request, invoice, cash_flow, revenue, expense
+TIME_TYPES: day, week, month, year, quarter, range
+
+CRITICAL CONTENT MAPPING (MUST USE EXACT VALUES):
+- "thu chi/cash flow/income/revenue/financial" → content='cash_flow'
+- "doanh thu/revenue/sales" → content='cash_flow'
+- "chi phí/expense/cost" → content='cash_flow'
+- "báo cáo/report" → content='report'
+- "nhân viên/employee/staff" → content='employee'
+- "dự án/project" → content='project'
+- "nhiệm vụ/task" → content='task'
+- "hiệu suất/performance" → content='performance'
+- "nghỉ phép/leave" → content='leave_request'
+- "hóa đơn/invoice/bill" → content='invoice'
+
 FUNCTION CALL EXAMPLES:
 Input: "Show financial report RPT123 tomorrow"
 Output: get(departments='finance', content='report', id='RPT123', type_of_time='day', specific_time='2025-06-12')
@@ -52,6 +75,10 @@ def create_function_calling_prompt(english_query: str, schema: List[Dict], curre
   yesterday = VietnamDateUtils.get_yesterday()
   next_week_range = VietnamDateUtils.get_next_week_range()
   this_month_start = VietnamDateUtils.get_this_month_start()
+
+  current_quarter = VietnamDateUtils.get_current_quarter_range()
+  next_quarter = VietnamDateUtils.get_next_quarter_range()
+  previous_quarter = VietnamDateUtils.get_previous_quarter_range()
 
   # Extract function info from schema
   functions_info = []
@@ -75,6 +102,9 @@ def create_function_calling_prompt(english_query: str, schema: List[Dict], curre
 - "yesterday/hôm qua" → type_of_time='day', specific_time='{yesterday}'
 - "next week/tuần tới" → type_of_time='range', specific_time='{next_week_range}'
 - "this month/tháng này" → type_of_time='month', specific_time='{this_month_start}
+- "current quarter/quý này" → type_of_time='quarter', specific_time='{current_quarter}'
+- "next quarter/quý tới" → type_of_time='quarter', specific_time='{next_quarter}'
+- "previous quarter/quý trước" → type_of_time='quarter', specific_time='{previous_quarter}'
 
 CURRENT DATE: {current_date}
 
